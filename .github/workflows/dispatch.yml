@@ -11,5 +11,8 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Please LOL for the build
-        run: echo LOL
+      - name: Output of the event payload
+        env:
+          REPO: ${{ github.event.client_payload.repo }}
+          VERSION: ${{ github.event.client_payload.version }}
+        run: echo $REPO - $VERSION
