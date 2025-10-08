@@ -1,0 +1,15 @@
+name: Dispatch event
+
+on:
+  repository_dispatch:
+    types: [test_result]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Please LOL for the build
+        run: echo LOL
